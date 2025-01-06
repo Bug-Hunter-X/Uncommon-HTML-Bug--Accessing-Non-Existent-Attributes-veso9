@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // Attempting to access a non-existent attribute
+    let x = document.getElementById("myDiv").getAttribute("nonExistentAttr");
+    console.log(x); // Output: null 
+    //Error: if you try to use this non existent attribute. 
+    //document.getElementById("myDiv").nonExistentAttr.value = "someValue"; 
+    //Instead you must set attributes like this
+    document.getElementById("myDiv").setAttribute("newAttr", "someValue");
+    // Or using the attribute property directly (more modern):
+    document.getElementById("myDiv").newAttr = "someValue";
+    console.log(document.getElementById("myDiv").getAttribute("newAttr"));
+    
+  </script>
+</body>
+</html>
