@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // Correct way to access attributes
+    let x = document.getElementById("myDiv").getAttribute("nonExistentAttr");
+    console.log(x); // Output: null (handled gracefully)
+
+    // Setting attributes correctly
+    document.getElementById("myDiv").setAttribute("newAttr", "someValue");
+    console.log(document.getElementById("myDiv").getAttribute("newAttr")); // Output: someValue
+    
+    // Or using the attribute property directly (more modern):
+    document.getElementById("myDiv").newAttr = "someOtherValue";
+    console.log(document.getElementById("myDiv").newAttr); // Output: someOtherValue
+  </script>
+</body>
+</html>
